@@ -35,11 +35,37 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         document.querySelector('.player-1-panel').classList.toggle('active')
         activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
         roundScore = 0;
-
-
+        
+        
         
     }
+    
+})
 
+document.querySelector('.btn-hold').addEventListener('click', function() {
+    // Take current roundScore and add to the score array
+    if (activePlayer === 0) {
+        score[0] += roundScore
+        document.getElementById('score-0').textContent = score[0];
+        
+        document.querySelector('#current-' + activePlayer).textContent = '0';
+        document.querySelector('.player-0-panel').classList.toggle('active')
+        document.querySelector('.player-1-panel').classList.toggle('active')
+        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+        roundScore = 0;
+
+    }
+    else {
+        score[1] += roundScore
+        document.getElementById('score-1').textContent = score[1];
+
+        document.querySelector('#current-' + activePlayer).textContent = '0';
+        document.querySelector('.player-0-panel').classList.toggle('active')
+        document.querySelector('.player-1-panel').classList.toggle('active')
+        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+        roundScore = 0;
+
+    }
 })
 
 // document.querySelector('#current-' + activePlayer).textContent = dice;
